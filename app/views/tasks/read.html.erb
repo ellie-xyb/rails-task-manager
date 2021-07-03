@@ -1,0 +1,9 @@
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+<% check = @task.completed ? '✔️ finished' : '✖️ not finish yet' %>
+<%= check %>
+<br><br>
+<hr>
+<%= link_to 'Edit', edit_task_path %>
+<hr>
+<%= link_to 'Back to list', tasks_path %>

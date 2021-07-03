@@ -1,0 +1,17 @@
+<h1>My tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <i class="fas fa<%= '-check' if task.completed %>-square"></i> <%= link_to task.title, task_path(task) %>
+      <%= link_to delete_task_path(task),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash-restore-alt"></i>
+        <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to 'Add a new task', new_task_path, :class => "btn btn-primary" %>
+
