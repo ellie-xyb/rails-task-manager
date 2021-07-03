@@ -1,6 +1,12 @@
-<%= simple_form_for(task) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :details %>
-  <%= f.input :completed if task.id %>
-  <%= f.submit value='save change' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(task) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :details %>
+      <%= f.input :completed if task.id %>
+      <%= f.button :submit, class: "btn-primary mb-3" %>    </div>
+  <% end %>
+</div>
+
+
+
